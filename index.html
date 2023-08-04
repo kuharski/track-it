@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track It!</title>
+  <link href="/styles/output.css" rel="stylesheet">
+  <script src="scripts/main.js" type="module" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen w-full flex flex-col font-gym text-slate-100">
+  <header class="bg-slate-600">
+    <div class="container mx-auto flex justify-center font-bold">
+      <a href="./index.html">
+        <h1 class="italic py-4 lg:py-6 text-5xl lg:text-7xl transition ease-in-out delay-75 hover:cursor-pointer hover:scale-110">
+          Track It!
+        </h1>
+      </a>
+    </div>
+  </header>
+  <main class="grow bg-gradient-to-r from-green-300 via-blue-300 to-purple-400">
+    <section>
+      <div class="w-full flex justify-center mb-12 md:mb-10 lg:mb-20">
+        <div class="flex flex-col h-60 md:flex-row md:mt-14 lg:mt-20">
+          <div class="mt-14 md:mt-0 md:flex md:flex-col md:justify-center md:mr-12 lg:mr-20">
+            <h2 class="whitespace-nowrap text-2xl p-4 md:text-4xl lg:text-6xl md:py-10 md:px-8 rounded-2xl font-semibold text-center bg-slate-600 text-slate-100">
+              Plan. &nbsp;Track. &nbsp;Set Goals. <br>
+              Keeping Moving.
+            </h2>
+          </div>
+          <div class="flex justify-evenly items-center mt-8 md:flex-col md:mt-0">
+            <a href="./plans.html">
+              <button class="text-md md:text-lg lg:text-xl py-2 md:py-3 lg:py-4 w-24 md:w-28 lg:w-32 bg-slate-600 text-slate-100 rounded-xl transition ease-in-out delay-75 hover:scale-110 hover:-translate-y-1 hover:bg-slate-700 hover:font-semibold focus:outline-none focus:ring focus:ring-bg-slate-100">
+                My Plans
+              </button>
+            </a>
+            <a href="./goals.html">
+              <button class="text-md md:text-lg lg:text-xl py-2 md:py-3 lg:py-4 w-24 md:w-28 lg:w-32 bg-slate-600 text-slate-100 rounded-xl transition ease-in-out delay-75 hover:scale-110 hover:-translate-y-1 hover:bg-slate-700 hover:font-semibold focus:outline-none focus:ring focus:ring-bg-slate-100">
+                My Goals
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="w-full flex justify-center mb-10 lg:mb-18">
+        <h2 class="whitespace-nowrap text-2xl md:text-3xl lg:text-4xl p-4 md:p-6 lg:py-8 rounded-2xl text-slate-100 font-semibold text-center bg-slate-600">
+          My Recent Workouts
+        </h2>
+      </div>
+      <!-- INSERT TABLE OF RECENT WORKOUTS HERE -->
+      <div class="text-slate-950 flex justify-center px-8 mb-14 lg:mb-24">
+        <div id="my-table" class="p-8 w-3/5 bg-slate-100 rounded-xl overflow-auto">
+          <!-- <table class="tracker w-full bg-slate-100">
+            <thead>
+              <tr>
+                <th class="p-5 text-lg font-semibold tracking-wider text-left">Date</th>
+                <th class="p-5 text-lg font-semibold tracking-wider text-left">Exercise</th>
+                <th class="p-5 text-lg font-semibold tracking-wider text-left whitespace-nowrap">How'd it go?</th>
+                <th class="p-5 text-lg font-semibold tracking-wider text-left">Duration</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="tracker__entries divide-y divide-slate-100">
+              <tr class="tracker__row odd:bg-slate-200 even:bg-slate-100">
+                <td class="p-5 text-md whitespace-nowrap">
+                  <input type="date" class="tracker__date p-1 bg-inherit rounded-md hover:cursor-pointer">
+                </td>
+                <td class="p-5 text-md whitespace-nowrap">
+                  <select class="tracker__workout p-1 bg-inherit rounded-md hover:cursor-pointer">
+                    <option value="upper-body">Upper Body Strength Training</option>
+                    <option value="lower-body">Lower Body Strength Training</option>
+                    <option value="running">Running</option>
+                    <option value="cycling">Cycling</option>
+                    <option value="swimming">Swimming</option>
+                    <option value="stretching">Stretching</option>
+                    <option value="yoga">Yoga</option>
+                  </select>
+                </td>
+                <td class="p-5 text-md whitespace-nowrap">
+                  <select class="tracker__feeling p-1 bg-inherit rounded-md hover:cursor-pointer">
+                    <option value="great">Great</option>
+                    <option value="good">Good</option>
+                    <option value="okay">Okay</option>
+                    <option value="poor">Poor</option>
+                    <option value="awful">Awful</option>
+                  </select>
+                </td>
+                <td class="p-5 text-md whitespace-nowrap">
+                  <input type="number" class="tracker__duration mr-1 w-11 text-right p-1 bg-inherit rounded-md hover:cursor-pointer">
+                  <span class="tracker__text">minutes</span>
+                </td>
+                <td class="p-5 text-md whitespace-nowrap">
+                  <button type="button" class=" px-1 py-0 tracker__button tracker__delete font-semibold text-xl uppercase tracking-wider text-red-800">&times;</button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="tracker__row tracker__row--add border-t-2 border-b-2 border-slate-200 bg-slate-100 text-green-600 font-semibold">
+                <td colspan="5" class="p-5 text-lg text-right">
+                  <button class=".tracker__add">Add Entry <span class="text-xl">&plus;</span></button>
+                </td>
+              </tr>
+            </tbody>
+          </table> -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="w-full flex justify-center bg-slate-600 text-slate-100 py-6 italic font-bold text-3xl lg:text-5xl">
+      <h1>
+        Track It!
+      </h1>
+    </div>
+  </footer>
+</body>
+</html>
