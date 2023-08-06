@@ -35,27 +35,72 @@ const displayGoals = () => {
     //get values
     let value = localStorage.getItem(key);
     let goalInnerDiv = document.createElement('div');
-    goalInnerDiv.classList.add('goal');
+    goalInnerDiv.classList.add('goal', 'py-1', 'px-3', 'm-3', 'flex', 'items-center', 'border-b-2', 'border-gray-300');
     goalInnerDiv.setAttribute('id', key);
-    goalInnerDiv.innerHTML = `<span id="goalname">
+
+    goalInnerDiv.innerHTML = `<span id="goalname" class="font-normal">
     ${key.split('_')[1]}</span>`;
     //local storage stores boolean as string -> parse it back to boolean
     let editButton = document.createElement('button');
-    editButton.classList.add('edit');
-    editButton.innerHTML = `EDIT`; //cant use font awesome no more
+    editButton.classList.add('edit', 'p-2', 'rounded-xl', 'font-semibold','hover:bg-slate-300', 'ml-auto', 'mr-4');
+    editButton.innerHTML = `Edit`;
     if(!JSON.parse(value)) {
       editButton.style.visibility = 'visible';
     } else {
       editButton.style.visibility = 'hidden';
-      goalInnerDiv.classList.add('completed');
+      goalInnerDiv.classList.add('completed'); //might be problem
     }
 
     goalInnerDiv.appendChild(editButton);
-    goalInnerDiv.innerHTML += `<button class="delete">DELETE</button>`;
+    goalInnerDiv.innerHTML += `<button class="delete p-2 text-red-800 hover:bg-red-200 rounded-xl font-semibold">Delete</button>`;
     goalsDiv.appendChild(goalInnerDiv);
-
   }
 
+  // - look at functionality
+  // goals = completed;
+  // goals = document.querySelectorAll('.goal');
+  // goals.forEach((element, index) => {
+  //   element.onclick = () => {
+  //     //local storage update
+  //     if(element.classList.contains('completed')) {
+  //       updateStorage(element.id.split('_')[0],
+  //       element.innerText, false);
+  //     } else {
+  //       updateStorage(element.id.split('_')[0],
+  //       element.innerText, true);
+  //     }
+  //   };
+  // });
+
+  //edit goals
+  editGoals = document.getElementsByClassName('edit');
+  Array.from(editGoals).forEach((element,index) => {
+    element.addEventListener('click', (e) => {
+      e.stopPropagation();
+      //disable other edit buttons
+      disableButtons(true);
+      // update input value remove div
+      let parent = element.parentElement;
+      newGoalInput.value = parent.querySelector('#goalname').innerText;
+      //set updatenote to task thats being edited
+      updateNote = parent.id;
+      //remove goal
+      parent.remove();
+    });
+  });
+
+  //delete goals
+  deleteGoals = document.getElementsByClassName('delete');
+  Array.from(deleteGoals).forEach((element, index) => {
+    element.addEventListener('click', (e) => {
+      e.stopPropagation();
+      //delete local storage remove div
+      let parent = element.parentElement;
+      removeGoal(parent.id);
+      parent.remove();
+      count -= 1;
+    });
+  });
 };
 
 //disable edit button
