@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Goals</title>
   <link href="/styles/output.css" rel="stylesheet">
-  <script src="scripts/main.js" type="module" defer></script>
+  <link href="/styles/newgoals.css" rel="stylesheet">
+  <script src="scripts/goals.js" type="module" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -27,74 +28,13 @@
           My Goals
         </h1>
       </div>
-      <div class="flex justify-center mt-12">
-        <div id="goals-table" class="p-8 w-4/5 lg:w-1/2 max-w-5xl text-slate-950 bg-slate-100 rounded-xl overflow-auto">
-          <!-- <table class="w-full bg-slate-100">
-            <thead>
-              <tr>
-                <th class="p-5 text-lg font-semibold text-left tracking-wider">Goals</th>
-                <th class="p-5 text-lg font-semibold text-left tracking-wider">Progress</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100">
-              <tr class="odd:bg-slate-200 even:bg-slate-100">
-                <td class="bg-inherit pl-5 pr-5 min-w-[16rem] md:w-9/12">
-                  <input type="text" class="bg-inherit w-full focus:outline-none border-b-2 border-gray-300 focus:border-gray-500 overflow-hidden hover:cursor-text" placeholder="i will go to the moon!"> 
-                </td>
-                <td class="bg-inherit md:w-2/12">
-                  <select class="p-5 bg-inherit focus:outline-none rounded-md hover:cursor-pointer">
-                    <option>One day</option>
-                    <option>Under Way</option>
-                    <option>Almost there</option>
-                    <option>Completed</option>
-                  </select>
-                </td>
-                <td class="p-5 text-md whitespace-nowrap w-1/12">
-                  <button type="button" class=" p-0.5 font-semibold text-xl uppercase rounded-full text-red-800 hover:bg-red-200">&nbsp;&nbsp;&nbsp;&times;&nbsp;&nbsp;&nbsp;</button>
-                </td>
-              </tr>
-              <tr class="odd:bg-slate-200 even:bg-slate-100">
-                <td class="bg-inherit pl-5 pr-5 min-w-[16rem] md:w-9/12">
-                  <input type="text" class="bg-inherit w-full focus:outline-none border-b-2 border-gray-300 focus:border-gray-500 overflow-hidden hover:cursor-text"> 
-                </td>
-                <td class="bg-inherit md:w-2/12">
-                  <select class="p-5 bg-inherit focus:outline-none rounded-md hover:cursor-pointer">
-                    <option>One day</option>
-                    <option>Under Way</option>
-                    <option>Almost there</option>
-                    <option>Completed</option>
-                  </select>
-                </td>
-                <td class="p-5 text-md whitespace-nowrap w-1/12">
-                  <button type="button" class=" p-0.5 font-semibold text-xl uppercase rounded-full text-red-800 hover:bg-red-200">&nbsp;&nbsp;&nbsp;&times;&nbsp;&nbsp;&nbsp;</button>
-                </td>
-              </tr>
-              <tr class="odd:bg-slate-200 even:bg-slate-100">
-                <td class="bg-inherit pl-5 pr-5 min-w-[16rem] md:w-9/12">
-                  <input type="text" class="bg-inherit w-full focus:outline-none border-b-2 border-gray-300 focus:border-gray-500 overflow-hidden hover:cursor-text"> 
-                </td>
-                <td class="bg-inherit md:w-2/12">
-                  <select class="p-5 bg-inherit focus:outline-none rounded-md hover:cursor-pointer">
-                    <option>One day</option>
-                    <option>Under Way</option>
-                    <option>Almost there</option>
-                    <option>Completed</option>
-                  </select>
-                </td>
-                <td class="p-5 text-md whitespace-nowrap w-1/12">
-                  <button type="button" class=" p-0.5 font-semibold text-xl uppercase rounded-full text-red-800 hover:bg-red-200">&nbsp;&nbsp;&nbsp;&times;&nbsp;&nbsp;&nbsp;</button>
-                </td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr class="tracker__row tracker__row--add border-t-2 border-b-2 border-slate-200 bg-slate-100 text-green-600 font-semibold">
-                <td colspan="5" class="p-5 text-lg text-right">
-                  <button class="tracker__add rounded-lg py-1 px-2 hover:bg-green-200">Add Entry <span class="text-xl">&plus;</span></button>
-                </td>
-              </tr>
-            </tbody>
-          </table>   -->
+      <div class="w-full flex justify-center mt-12">
+        <div class="container w-5/6 max-w-lg">
+          <div id="new-goal" class="grid grid-cols-[9fr_3fr] gap-4 bg-slate-100 py-7 px-5 rounded-lg shadow-lg text-slate-950">
+            <input type="text" class="bg-inherit font-medium py-3 px-2 border-b-2 border-gray-300 focus:outline-none focus:border-gray-400" placeholder="Enter Your New Goal Here...">
+            <button id="push" class="rounded-lg py-1 px-2 hover:bg-green-200 text-green-600"><span class=" font-semibold text-lg">Add</span></button>
+            <div id="goals" class="py-7 px-5 mt-14 w-full rounded-xl"></div>
+          </div>
         </div>
       </div>
     </section>
