@@ -38,7 +38,7 @@ const displayGoals = () => {
     goalInnerDiv.classList.add('goal', 'py-1', 'px-3', 'm-3', 'flex', 'items-center', 'border-b-2', 'border-gray-300');
     goalInnerDiv.setAttribute('id', key);
 
-    goalInnerDiv.innerHTML = `<span id="goalname" class="font-normal">
+    goalInnerDiv.innerHTML = `<span id="goalname" class="font-normal overflow-hidden mr-2">
     ${key.split('_')[1]}</span>`;
     //local storage stores boolean as string -> parse it back to boolean
     let editButton = document.createElement('button');
