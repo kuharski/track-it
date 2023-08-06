@@ -53,10 +53,10 @@ export default class Tracker {
     return `
       <tr class="tracker__row odd:bg-slate-200 even:bg-slate-100">
       <td class="p-5 text-md whitespace-nowrap">
-        <input type="date" class="tracker__date p-1 bg-inherit rounded-md hover:cursor-pointer">
+        <input type="date" class="tracker__date p-1 bg-inherit focus:outline-none rounded-md hover:cursor-pointer">
       </td>
       <td class="p-5 text-md whitespace-nowrap">
-        <select class="tracker__workout p-1 bg-inherit rounded-md hover:cursor-pointer">
+        <select class="tracker__workout p-1 bg-inherit focus:outline-none rounded-md hover:cursor-pointer">
           <option value="upper-body">Upper Body Strength Training</option>
           <option value="lower-body">Lower Body Strength Training</option>
           <option value="running">Running</option>
@@ -67,7 +67,7 @@ export default class Tracker {
         </select>
       </td>
       <td class="p-5 text-md whitespace-nowrap">
-        <select class="tracker__feeling p-1 bg-inherit rounded-md hover:cursor-pointer">
+        <select class="tracker__feeling p-1 bg-inherit focus:outline-none rounded-md hover:cursor-pointer">
           <option value="great">Great</option>
           <option value="good">Good</option>
           <option value="okay">Okay</option>
@@ -76,7 +76,7 @@ export default class Tracker {
         </select>
       </td>
       <td class="p-5 text-md whitespace-nowrap">
-        <input type="number" class="tracker__duration mr-1 w-11 text-right p-1 bg-inherit rounded-md hover:cursor-pointer">
+        <input type="number" class="tracker__duration mr-1 w-11 text-right p-1 bg-inherit focus:outline-none rounded-md hover:cursor-pointer">
         <span class="tracker__text">minutes</span>
       </td>
       <td class="p-5 text-md whitespace-nowrap">
