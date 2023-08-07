@@ -88,6 +88,7 @@ const displayGoals = () => {
       updateNote = parent.id;
       //remove goal
       parent.remove();
+      removeGoal(updateNote);
     });
   });
 
