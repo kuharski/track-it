@@ -38,7 +38,7 @@ const displayGoals = () => {
     goalInnerDiv.classList.add('goal', 'py-1', 'px-3', 'm-3', 'flex', 'items-center', 'border-b-2', 'border-gray-300');
     goalInnerDiv.setAttribute('id', key);
 
-    goalInnerDiv.innerHTML = `<span id="goalname" class="font-normal overflow-hidden mr-2">
+    goalInnerDiv.innerHTML = `<span id="goalname" class="font-normal whitespace-normal mr-2 cursor-pointer">
     ${key.split('_')[1]}</span>`;
     //local storage stores boolean as string -> parse it back to boolean
     let editButton = document.createElement('button');
@@ -48,29 +48,31 @@ const displayGoals = () => {
       editButton.style.visibility = 'visible';
     } else {
       editButton.style.visibility = 'hidden';
-      goalInnerDiv.classList.add('completed'); //might be problem
+      goalInnerDiv.classList.add('completed');
+      goalInnerDiv.firstChild.classList.add('line-through');
     }
 
     goalInnerDiv.appendChild(editButton);
     goalInnerDiv.innerHTML += `<button class="delete p-2 text-red-800 hover:bg-red-200 rounded-xl font-semibold">Delete</button>`;
     goalsDiv.appendChild(goalInnerDiv);
   }
+  // goals completed
 
-  // - look at functionality
-  // goals = completed;
-  // goals = document.querySelectorAll('.goal');
-  // goals.forEach((element, index) => {
-  //   element.onclick = () => {
-  //     //local storage update
-  //     if(element.classList.contains('completed')) {
-  //       updateStorage(element.id.split('_')[0],
-  //       element.innerText, false);
-  //     } else {
-  //       updateStorage(element.id.split('_')[0],
-  //       element.innerText, true);
-  //     }
-  //   };
-  // });
+  goals = document.querySelectorAll('.goal');
+  goals.forEach((element, index) => {
+    element.firstChild.onclick = () => {
+      //local storage update
+
+      if(element.classList.contains('completed')) {
+        updateStorage(element.id.split('_')[0],
+        element.firstChild.innerText, false);
+
+      } else {
+        updateStorage(element.id.split('_')[0],
+        element.firstChild.innerText, true);
+      }
+    };
+  });
 
   //edit goals
   editGoals = document.getElementsByClassName('edit');
@@ -129,7 +131,7 @@ document.getElementById('push').addEventListener('click', () => {
   //enable edit button
   disableButtons(false);
   if(newGoalInput.value.length == 0) {
-    alert("Please Enter A Goal!");
+    alert("Please Enter A Goal.");
   } else {
     //store locally and display from storage
     if(updateNote=='') {
