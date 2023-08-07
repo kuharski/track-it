@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="min-h-screen w-full flex flex-col font-gym text-slate-100">
-  <header class="bg-slate-600">
+<body class="min-h-screen w-full flex flex-col font-gym text-black bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-yellow-600 via-gray-700 to-cyan-600">
+  <header class="bg-cyan-800 text-slate-100">
     <div class="container mx-auto flex justify-center font-bold">
       <a href="./index.html">
         <h1 class="italic py-4 lg:py-6 text-5xl lg:text-7xl transition ease-in-out delay-75 hover:cursor-pointer hover:scale-110">
@@ -21,26 +21,34 @@
       </a>
     </div>
   </header>
-  <main class="grow bg-gradient-to-r from-green-300 via-blue-300 to-purple-400">
+  <main class="grow bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-yellow-600 via-gray-700 to-cyan-600">
     <section>
-      <div class="w-full flex justify-center mt-16">
-        <h1 class="font-semibold text-3xl py-3 px-5 rounded-xl bg-slate-600 text-slate-100">
-          My Goals
-        </h1>
+      <div class="w-full flex flex-col md:flex-row justify-center items-center mt-16">
+        <div class="flex flex-col justify-center items-center">
+          <h2 class="whitespace-nowrap text-2xl sm:text-3xl lg:text-4xl py-2 px-5 sm:py-4 sm:px-7 lg:py-5 lg:px-9 rounded-lg sm:rounded-xl text-black font-semibold text-center bg-slate-100">
+            My Goals
+          </h2>
+        </div>
+        <h2 class="whitespace-nowrap mt-12 md:mt-0 md:ml-16 text-base sm:text-xl lg:text-2xl py-1 px-3 sm:py-4 sm:px-7 lg:py-5 lg:px-9 rounded-lg sm:rounded-xl text-black font-normal bg-slate-100">
+          "Kites rise highest against the wind - not with it." <br>
+          <span class="text-left font-semibold">Winston Churchill</span>
+        </h2>
       </div>
-      <div class="w-full flex justify-center text-slate-950 mt-12 mb-24">
+      <div class="w-full flex justify-center mt-12 mb-24">
         <div class="container w-5/6 min-w-lg max-w-3xl">
           <div id="new-goal" class="grid grid-cols-[9fr_3fr] gap-4 bg-slate-100 py-7 px-5 rounded-lg shadow-lg">
-            <input type="text" class="bg-inherit font-medium py-3 px-2 border-b-2 border-gray-300 focus:outline-none focus:border-gray-400" placeholder="Enter Your New Goal Here...">
-            <button id="push" class="rounded-xl hover:bg-green-200 text-green-600 w-32 justify-self-center"><span class="font-semibold text-lg">Add</span></button>
+            <input type="text" class="bg-inherit font-medium py-3 px-2 border-b-2 border-gray-300 focus:outline-none focus:border-gray-400" placeholder="Start A New Goal Here...">
+            <button id="push" class="rounded-xl hover:bg-green-200 text-green-600 w-20 sm:w-32 justify-self-center"><span class="font-semibold text-lg">Add</span></button>
           </div>
-          <div id="goals" class="py-7 px-5 mt-14 mb-0 w-full rounded-xl grid grid-flow-col bg-slate-100"></div>
+          <div id="goals" class="py-7 px-5 mt-14 mb-0 w-full rounded-xl grid grid-flow-col bg-slate-100">
+            <!-- goals inserted here -->
+          </div>
         </div>
       </div>
     </section>
   </main>
   <footer>
-    <div class="w-full flex justify-center bg-slate-600 text-slate-100 py-6 italic font-bold text-3xl lg:text-5xl">
+    <div class="w-full flex justify-center bg-cyan-800 text-slate-100 py-6 italic font-bold text-3xl lg:text-5xl">
       <h1>
         Track It!
       </h1>
